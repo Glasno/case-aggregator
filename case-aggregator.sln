@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9265F3DD-11A0-442A-81E6-8E0B941A9839}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F56107E5-DA4F-4DD6-99C5-726D05EAB4DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{81DAEAB8-9762-472E-A69B-004C7E6DDE1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glasno.Case.Aggregator.Presentation", "src\Glasno.Case.Aggregator.Presentation\Glasno.Case.Aggregator.Presentation.csproj", "{374FEFF3-572C-44BB-999C-111BA3406E92}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalServices", "ExternalServices", "{EE14AF4F-911F-4CCD-AFA2-253818B18E3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glasno.Case.Aggregator.ExternalServices", "src\Glasno.Case.Aggregator.ExternalServices\Glasno.Case.Aggregator.ExternalServices.csproj", "{9AC76B74-8443-42C6-B57C-E8562119B68D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glasno.Case.Aggregator.ExternalServices.KadArbitr", "src\Glasno.Case.Aggregator.ExternalServices.KadArbitr\Glasno.Case.Aggregator.ExternalServices.KadArbitr.csproj", "{69513044-F6A8-440B-A775-7760BA1597C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glasno.Case.Aggregator.Domain", "src\Glasno.Case.Aggregator.Domain\Glasno.Case.Aggregator.Domain.csproj", "{72A1DA72-E7CE-497F-9AB9-3FDEB2DA0E21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glasno.Case.Aggregator.Infrastructure", "src\Glasno.Case.Aggregator.Infrastructure\Glasno.Case.Aggregator.Infrastructure.csproj", "{C580E8A0-2841-474B-A2FB-93729D00AC28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glasno.Case.Aggregator.Infrastructure.Abstractions", "src\Glasno.Case.Aggregator.Infrastructure.Abstractions\Glasno.Case.Aggregator.Infrastructure.Abstractions.csproj", "{5381FF31-3E20-4DA4-9DEB-3EA3EB0311E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glasno.Case.Aggregator.Presentations.Abstractions", "src\Glasno.Case.Aggregator.Presentations.Abstractions\Glasno.Case.Aggregator.Presentations.Abstractions.csproj", "{A7C471F1-9059-4AA7-9227-C435D3394414}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{374FEFF3-572C-44BB-999C-111BA3406E92} = {9265F3DD-11A0-442A-81E6-8E0B941A9839}
+		{EE14AF4F-911F-4CCD-AFA2-253818B18E3E} = {9265F3DD-11A0-442A-81E6-8E0B941A9839}
+		{9AC76B74-8443-42C6-B57C-E8562119B68D} = {EE14AF4F-911F-4CCD-AFA2-253818B18E3E}
+		{69513044-F6A8-440B-A775-7760BA1597C3} = {EE14AF4F-911F-4CCD-AFA2-253818B18E3E}
+		{72A1DA72-E7CE-497F-9AB9-3FDEB2DA0E21} = {9265F3DD-11A0-442A-81E6-8E0B941A9839}
+		{C580E8A0-2841-474B-A2FB-93729D00AC28} = {9265F3DD-11A0-442A-81E6-8E0B941A9839}
+		{5381FF31-3E20-4DA4-9DEB-3EA3EB0311E8} = {9265F3DD-11A0-442A-81E6-8E0B941A9839}
+		{A7C471F1-9059-4AA7-9227-C435D3394414} = {9265F3DD-11A0-442A-81E6-8E0B941A9839}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{374FEFF3-572C-44BB-999C-111BA3406E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{374FEFF3-572C-44BB-999C-111BA3406E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{374FEFF3-572C-44BB-999C-111BA3406E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{374FEFF3-572C-44BB-999C-111BA3406E92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AC76B74-8443-42C6-B57C-E8562119B68D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AC76B74-8443-42C6-B57C-E8562119B68D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AC76B74-8443-42C6-B57C-E8562119B68D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AC76B74-8443-42C6-B57C-E8562119B68D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69513044-F6A8-440B-A775-7760BA1597C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69513044-F6A8-440B-A775-7760BA1597C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69513044-F6A8-440B-A775-7760BA1597C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69513044-F6A8-440B-A775-7760BA1597C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72A1DA72-E7CE-497F-9AB9-3FDEB2DA0E21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72A1DA72-E7CE-497F-9AB9-3FDEB2DA0E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72A1DA72-E7CE-497F-9AB9-3FDEB2DA0E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72A1DA72-E7CE-497F-9AB9-3FDEB2DA0E21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C580E8A0-2841-474B-A2FB-93729D00AC28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C580E8A0-2841-474B-A2FB-93729D00AC28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C580E8A0-2841-474B-A2FB-93729D00AC28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C580E8A0-2841-474B-A2FB-93729D00AC28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5381FF31-3E20-4DA4-9DEB-3EA3EB0311E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5381FF31-3E20-4DA4-9DEB-3EA3EB0311E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5381FF31-3E20-4DA4-9DEB-3EA3EB0311E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5381FF31-3E20-4DA4-9DEB-3EA3EB0311E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7C471F1-9059-4AA7-9227-C435D3394414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7C471F1-9059-4AA7-9227-C435D3394414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7C471F1-9059-4AA7-9227-C435D3394414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7C471F1-9059-4AA7-9227-C435D3394414}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
