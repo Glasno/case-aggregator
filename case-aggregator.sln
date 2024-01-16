@@ -8,6 +8,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F56107E5-DA4F-4DD6-99C5-726D05EAB4DD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{81DAEAB8-9762-472E-A69B-004C7E6DDE1F}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glasno.Case.Aggregator.Presentation", "src\Glasno.Case.Aggregator.Presentation\Glasno.Case.Aggregator.Presentation.csproj", "{374FEFF3-572C-44BB-999C-111BA3406E92}"
 EndProject
