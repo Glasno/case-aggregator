@@ -44,10 +44,10 @@ public static partial class CasesParser
         return new CaseExternal(
             CaseId: ParseGuidFromHtml(caseInfoHtml),
             Date: ParseDateFromHtml(caseInfoHtml),
-            CaseNumber: GetCaseExternalObjectFromHtml(caseInfoHtml, ParsePatternType.CaseNumber),
+            CaseNumber: GetCaseExternalObjectFromHtml(caseInfoHtml, CasesParsePatternService.ParsePatternType.CaseNumber),
             CaseType: ParseCaseTypeFromHtml(caseInfoHtml),
-            CourtName: GetCaseExternalObjectFromHtml(courtInfoHtml, ParsePatternType.CourtName),
-            JudgeName: GetCaseExternalObjectFromHtml(courtInfoHtml, ParsePatternType.JudgeName),
+            CourtName: GetCaseExternalObjectFromHtml(courtInfoHtml, CasesParsePatternService.ParsePatternType.CourtName),
+            JudgeName: GetCaseExternalObjectFromHtml(courtInfoHtml, CasesParsePatternService.ParsePatternType.JudgeName),
             Plaintiffs: ParsePlaintiff(plaintiffsHtml),
             Respondents: ParseRespondent(respondentsHtml)
         );

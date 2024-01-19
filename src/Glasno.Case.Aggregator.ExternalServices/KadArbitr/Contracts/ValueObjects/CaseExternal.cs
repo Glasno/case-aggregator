@@ -7,7 +7,7 @@ public record CaseExternal
     CaseTypeExternal CaseType,
     string CourtName,
     string JudgeName,
-    DateTime Date,
+    DateTime? Date,
     PlaintiffExternal[] Plaintiffs,
     RespondentExternal[] Respondents
 );

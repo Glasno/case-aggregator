@@ -22,8 +22,7 @@ public class KadArbitrCaseProvider: IKadArbitrCaseProvider
         var response = await _client.ExecutePostAsync(request);
 
         if (!response.IsSuccessful) 
-            
-            throw new Exception();
+            throw response.ErrorException;
         
         return CasesParser.ParseHtml(response.Content);
     }
