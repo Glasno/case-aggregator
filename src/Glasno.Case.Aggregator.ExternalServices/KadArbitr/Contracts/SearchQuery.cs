@@ -1,14 +1,15 @@
-﻿namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.Contracts;
+﻿using Glasno.Case.Aggregator.ExternalServices.KadArbitr.Contracts.ValueObjects;
+
+namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.Contracts;
 
 public record SearchQuery
 (
         int Page,
         int Count,
-        CaseTypeExternal CaseType,
         string[] Courts,
         DateTime? DateFrom,
         DateTime? DateTo,
-        SidesExternal Sides,
+        SideExternal[] Sides,
         string[] Judges,
         string[] CaseNumbers,
         bool WithVKSInstances
