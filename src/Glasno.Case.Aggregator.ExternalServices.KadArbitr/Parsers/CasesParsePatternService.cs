@@ -1,4 +1,6 @@
-﻿namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.Parsers;
+﻿using Glasno.Case.Aggregator.ExternalServices.KadArbitr.Parsers.Enums;
+
+namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.Parsers;
 
 public static class CasesParsePatternService
 {
@@ -11,19 +13,6 @@ public static class CasesParsePatternService
     private const string PersonAddressPattern = @"br>([^""]+)\s</span>";
     private const string PersonNamePattern = @"<strong>([^""]+)</strong>";
     private const string PersonInnPattern = @": ([^""]+)</div>\s";
-
-    public enum ParsePatternType
-    {
-        CaseHref,
-        Date,
-        CaseNumber,
-        CaseType, 
-        CourtName,
-        JudgeName,
-        PersonAddress,
-        PersonName,
-        PersonInn
-    }
     
     public static string SelectParsePattern(ParsePatternType patternType) => patternType switch
     {

@@ -7,12 +7,20 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="CefSharp.Common.NETCore" Version="120.2.70" />
+      <PackageReference Include="CefSharp.OffScreen.NETCore" Version="120.2.70" />
       <PackageReference Include="HtmlAgilityPack" Version="1.11.57" />
       <PackageReference Include="RestSharp" Version="110.2.1-alpha.0.16" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Glasno.Case.Aggregator.ExternalServices\Glasno.Case.Aggregator.ExternalServices.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Parsers\CasesParser.Helpers.cs">
+        <DependentUpon>CasesParser.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

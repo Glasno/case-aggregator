@@ -1,13 +1,14 @@
 ﻿using System.Globalization;
 using System.Text.RegularExpressions;
 using Glasno.Case.Aggregator.ExternalServices.KadArbitr.Contracts.ValueObjects;
+using Glasno.Case.Aggregator.ExternalServices.KadArbitr.Parsers.Enums;
 using HtmlAgilityPack;
 
 namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.Parsers;
 
 public static partial class CasesParser
 {
-    private static string GetCaseExternalObjectFromHtml(string html, CasesParsePatternService.ParsePatternType patternType)
+    private static string GetCaseExternalObjectFromHtml(string html, ParsePatternType patternType)
     {
         var pattern = CasesParsePatternService.SelectParsePattern(patternType);
         var match = Regex.Match(html, pattern);
@@ -17,7 +18,7 @@ public static partial class CasesParser
 
     private static Guid ParseGuidFromHtml(string html)
     {
-        var href = GetCaseExternalObjectFromHtml(html, CasesParsePatternService.ParsePatternType.CaseHref);
+        var href = GetCaseExternalObjectFromHtml(html, ParsePatternType.CaseHref);
         var guid = href.Split('/').Last();
 
         return new Guid(guid);
@@ -25,7 +26,7 @@ public static partial class CasesParser
 
     private static DateTime? ParseDateFromHtml(string html)
     {
-        var date = GetCaseExternalObjectFromHtml(html, CasesParsePatternService.ParsePatternType.Date);
+        var date = GetCaseExternalObjectFromHtml(html, ParsePatternType.Date);
 
         if (DateTime.TryParseExact(date, "dd.MM.yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out var dateTime))
             return dateTime;
@@ -35,7 +36,7 @@ public static partial class CasesParser
 
     private static CaseTypeExternal ParseCaseTypeFromHtml(string html)
     {
-        var type = GetCaseExternalObjectFromHtml(html, CasesParsePatternService.ParsePatternType.CaseType);
+        var type = GetCaseExternalObjectFromHtml(html, ParsePatternType.CaseType);
 
         return GetCaseTypeExternal(type);
     }
@@ -45,16 +46,20 @@ public static partial class CasesParser
         var container = num.ChildNodes.First(node => node.Name == "div");
         var result = new List<PlaintiffExternal>();
 
-        foreach (var childNode in container.ChildNodes.Where(node => node.Name == "div"))
-        {
-            if (childNode.ChildNodes.All(node => node.Name != "span")) continue;
+        var childNodes = container.ChildNodes
+            .Where(node => 
+                node.Name == "div" 
+                && node.ChildNodes
+                    .Any(n => n.Name == "span"));
 
+        foreach (var childNode in childNodes)
+        {
             result.Add(new PlaintiffExternal(
-                Name: GetCaseExternalObjectFromHtml(childNode.InnerHtml, CasesParsePatternService.ParsePatternType.PersonName)
+                Name: GetCaseExternalObjectFromHtml(childNode.InnerHtml, ParsePatternType.PersonName)
                     .Replace("&quot;", @""""),
                 Address: GetCaseExternalObjectFromHtml(childNode.ChildNodes.First(node => node.Name == "span").InnerHtml,
-                    CasesParsePatternService.ParsePatternType.PersonAddress),
-                Inn: GetCaseExternalObjectFromHtml(childNode.InnerHtml, CasesParsePatternService.ParsePatternType.PersonInn)
+                    ParsePatternType.PersonAddress),
+                Inn: GetCaseExternalObjectFromHtml(childNode.InnerHtml, ParsePatternType.PersonInn)
             ));
         }
 
@@ -71,11 +76,11 @@ public static partial class CasesParser
             if (childNode.ChildNodes.All(node => node.Name != "span")) continue;
 
             result.Add(new RespondentExternal(
-                Name: GetCaseExternalObjectFromHtml(childNode.InnerHtml, CasesParsePatternService.ParsePatternType.PersonName)
+                Name: GetCaseExternalObjectFromHtml(childNode.InnerHtml, ParsePatternType.PersonName)
                     .Replace("&quot;", @""""),
                 Address: GetCaseExternalObjectFromHtml((childNode.ChildNodes.First(node => node.Name == "span")).InnerHtml,
-                    CasesParsePatternService.ParsePatternType.PersonAddress),
-                Inn: GetCaseExternalObjectFromHtml(childNode.InnerHtml, CasesParsePatternService.ParsePatternType.PersonInn)
+                    ParsePatternType.PersonAddress),
+                Inn: GetCaseExternalObjectFromHtml(childNode.InnerHtml, ParsePatternType.PersonInn)
             ));
         }
 

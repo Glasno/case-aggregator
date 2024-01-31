@@ -5,5 +5,5 @@ namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr;
 
 public interface IKadArbitrCaseProvider
 {
-    Task<CaseExternal[]> SearchCases(SearchQuery query, string cookie);
+    Task<CaseExternal[]> SearchCases(SearchQuery query);
 }

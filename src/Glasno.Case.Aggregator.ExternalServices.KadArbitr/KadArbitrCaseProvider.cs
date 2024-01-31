@@ -1,8 +1,8 @@
-﻿using Glasno.Case.Aggregator.ExternalServices.KadArbitr.Contracts;
+﻿using CefSharp.OffScreen;
+using Glasno.Case.Aggregator.ExternalServices.KadArbitr.Contracts;
 using Glasno.Case.Aggregator.ExternalServices.KadArbitr.Contracts.ValueObjects;
-using Glasno.Case.Aggregator.ExternalServices.KadArbitr.Extensions;
+using Glasno.Case.Aggregator.ExternalServices.KadArbitr.Factories;
 using Glasno.Case.Aggregator.ExternalServices.KadArbitr.Parsers;
-using Glasno.Case.Aggregator.ExternalServices.KadArbitr.Requests;
 using RestSharp;
 
 namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr;
@@ -10,15 +10,19 @@ namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr;
 public class KadArbitrCaseProvider: IKadArbitrCaseProvider
 {
     private readonly RestClient _client;
+    private readonly ChromiumWebBrowser _browser;
 
     public KadArbitrCaseProvider()
     {
-        _client = new RestClient().CreateKadArbitrRestClient();
+        _client = KadArbitrRestClientFactory.Create();
+        _browser = KadArbitrBrowserFactory.Create();
     }
     
-    public async Task<CaseExternal[]> SearchCases(SearchQuery query, string cookie)
+    public async Task<CaseExternal[]> SearchCases(SearchQuery query)
     {
-        var request = SearchCasesRequest.CreatePost(query, cookie);
+        var cookie = await _browser.CreateCookies();
+        
+        var request = SearchCasesRestRequestFactory.CreatePost(query, cookie);
         var response = await _client.ExecutePostAsync(request);
 
         if (!response.IsSuccessful) 

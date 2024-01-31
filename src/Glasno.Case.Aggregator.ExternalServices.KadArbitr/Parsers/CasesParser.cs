@@ -1,4 +1,5 @@
 ﻿using Glasno.Case.Aggregator.ExternalServices.KadArbitr.Contracts.ValueObjects;
+using Glasno.Case.Aggregator.ExternalServices.KadArbitr.Parsers.Enums;
 using HtmlAgilityPack;
 
 namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.Parsers;
@@ -12,7 +13,7 @@ public static partial class CasesParser
 
         var allCases = document.DocumentNode.SelectNodes("//tr");
         
-        return allCases.Select(courtСase => GetCases(courtСase)).ToArray();
+        return allCases.Select(GetCases).ToArray();
     }
 
     private static CaseExternal GetCases(HtmlNode courtСases)
@@ -44,10 +45,10 @@ public static partial class CasesParser
         return new CaseExternal(
             CaseId: ParseGuidFromHtml(caseInfoHtml),
             Date: ParseDateFromHtml(caseInfoHtml),
-            CaseNumber: GetCaseExternalObjectFromHtml(caseInfoHtml, CasesParsePatternService.ParsePatternType.CaseNumber),
+            CaseNumber: GetCaseExternalObjectFromHtml(caseInfoHtml, ParsePatternType.CaseNumber),
             CaseType: ParseCaseTypeFromHtml(caseInfoHtml),
-            CourtName: GetCaseExternalObjectFromHtml(courtInfoHtml, CasesParsePatternService.ParsePatternType.CourtName),
-            JudgeName: GetCaseExternalObjectFromHtml(courtInfoHtml, CasesParsePatternService.ParsePatternType.JudgeName),
+            CourtName: GetCaseExternalObjectFromHtml(courtInfoHtml, ParsePatternType.CourtName),
+            JudgeName: GetCaseExternalObjectFromHtml(courtInfoHtml, ParsePatternType.JudgeName),
             Plaintiffs: ParsePlaintiff(plaintiffsHtml),
             Respondents: ParseRespondent(respondentsHtml)
         );
