@@ -1,14 +1,14 @@
-﻿using Glasno.Case.Aggregator.ExternalServices.KadArbitr.Extensions;
-using Glasno.Case.Aggregator.ExternalServices.KadArbitr.Parsers;
+﻿using Glasno.Case.Aggregator.ExternalServices.KadArbitr.Parsers;
+using Glasno.Case.Aggregator.ExternalServices.KadArbitr.UnitTests.Extensions;
 using Xunit.Abstractions;
 
 namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.UnitTests.Tests;
 
-public class ParseCasesHtmlPageTests
+public class CasesParserTests
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
-    public ParseCasesHtmlPageTests(ITestOutputHelper testOutputHelper)
+    public CasesParserTests(ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }

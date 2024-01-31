@@ -27,10 +27,13 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="Assets\SearchCasesHtmlResponse.html">
+      <None Update="Assets\SearchCasesHtmlResponse_test_1.html">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="Assets\SearchCasesHtmlResponse_1.html">
+      <None Update="Assets\SearchCasesHtmlResponse_test_2.html">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Assets\SearchCasesHtmlResponse_test_3.html">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>

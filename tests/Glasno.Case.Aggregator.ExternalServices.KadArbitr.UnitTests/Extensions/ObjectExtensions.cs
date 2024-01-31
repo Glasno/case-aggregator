@@ -2,7 +2,7 @@
 using System.Text.Json;
 using System.Text.Unicode;
 
-namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.Extensions;
+namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.UnitTests.Extensions;
 
 public static class ObjectExtensions
 {
