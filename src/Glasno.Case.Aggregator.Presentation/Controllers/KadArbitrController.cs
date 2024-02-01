@@ -1,5 +1,6 @@
 ﻿using Glasno.Case.Aggregator.Application;
 using Glasno.Case.Aggregator.Application.Queries.SearchCases;
+using Glasno.Case.Aggregator.Application.Queries.SearchCases.Contracts;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

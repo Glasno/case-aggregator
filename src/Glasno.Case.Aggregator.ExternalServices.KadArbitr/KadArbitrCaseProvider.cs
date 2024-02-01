@@ -7,17 +7,11 @@ using RestSharp;
 
 namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr;
 
-public class KadArbitrCaseProvider: IKadArbitrCaseProvider
+public class KadArbitrCaseProvider : IKadArbitrCaseProvider
 {
-    private readonly RestClient _client;
-    private readonly ChromiumWebBrowser _browser;
+    private readonly RestClient _client = RestClientFactory.Create();
+    private readonly ChromiumWebBrowser _browser = BrowserFactory.Create();
 
-    public KadArbitrCaseProvider()
-    {
-        _client = RestClientFactory.Create();
-        _browser = BrowserFactory.Create();
-    }
-    
     public async Task<CaseExternal[]> SearchCases(SearchQuery query)
     {
         var cookie = await _browser.CreateCookies();
@@ -26,8 +20,10 @@ public class KadArbitrCaseProvider: IKadArbitrCaseProvider
         var response = await _client.ExecutePostAsync(request);
 
         if (!response.IsSuccessful) 
-            throw response.ErrorException;
-        
-        return CasesParser.ParseHtml(response.Content);
+            throw response.ErrorException!;
+
+        return response.Content != null 
+            ? CasesParser.ParseHtml(response.Content)
+            : Array.Empty<CaseExternal>();
     }
 }

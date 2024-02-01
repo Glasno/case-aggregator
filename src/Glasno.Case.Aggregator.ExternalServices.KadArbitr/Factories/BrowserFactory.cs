@@ -24,19 +24,19 @@ internal static class BrowserFactory
         var loadUrl = await browser.WaitForInitialLoadAsync();
 
         if (!loadUrl.Success)
-        {
             throw new Exception(
                 $"Page load failed with ErrorCode:{loadUrl.ErrorCode}, HttpStatusCode:{loadUrl.HttpStatusCode}");
-        }
     }
 
     internal static async Task<string> CreateCookies(this ChromiumWebBrowser browser)
     {
         browser.ExecuteScriptAsync(ClickOnSearchButtonScript);
 
-        await Task.Delay(5000);
+        await Task.Delay(TimeSpan.FromSeconds(5));
 
-        var cookiesList = await browser.GetCookieManager().VisitAllCookiesAsync();
+        var cookiesList = await browser.GetCookieManager()
+            .VisitAllCookiesAsync();
+        
         var cookies = cookiesList.FindAll(cookie => cookie.Name is "pr_fp" or "wasm");
 
         return FormattingCookies(cookies);

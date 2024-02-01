@@ -13,7 +13,7 @@ public static partial class CasesParser
 
         var allCases = document.DocumentNode.SelectNodes("//tr");
         
-        return allCases.Select(GetCases).ToArray();
+        return allCases?.Select(GetCases).ToArray() ?? Array.Empty<CaseExternal>();
     }
 
     private static CaseExternal GetCases(HtmlNode courtСases)
@@ -42,15 +42,16 @@ public static partial class CasesParser
             }
         }
 
-        return new CaseExternal(
-            CaseId: ParseGuidFromHtml(caseInfoHtml),
-            Date: ParseDateFromHtml(caseInfoHtml),
-            CaseNumber: GetCaseExternalObjectFromHtml(caseInfoHtml, ParsePatternType.CaseNumber),
-            CaseType: ParseCaseTypeFromHtml(caseInfoHtml),
-            CourtName: GetCaseExternalObjectFromHtml(courtInfoHtml, ParsePatternType.CourtName),
-            JudgeName: GetCaseExternalObjectFromHtml(courtInfoHtml, ParsePatternType.JudgeName),
-            Plaintiffs: ParsePlaintiff(plaintiffsHtml),
-            Respondents: ParseRespondent(respondentsHtml)
-        );
+        return new CaseExternal
+        {
+            CaseId = ParseGuidFromHtml(caseInfoHtml),
+            Date = ParseDateFromHtml(caseInfoHtml),
+            CaseNumber = GetCaseExternalObjectFromHtml(caseInfoHtml, ParsePatternType.CaseNumber),
+            CaseType = ParseCaseTypeFromHtml(caseInfoHtml),
+            CourtName = GetCaseExternalObjectFromHtml(courtInfoHtml, ParsePatternType.CourtName),
+            JudgeName = GetCaseExternalObjectFromHtml(courtInfoHtml, ParsePatternType.JudgeName),
+            Plaintiffs = ParsePlaintiff(plaintiffsHtml),
+            Respondents = ParseRespondent(respondentsHtml)
+        };
     }
 }

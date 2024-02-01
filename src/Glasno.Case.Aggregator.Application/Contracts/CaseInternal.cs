@@ -2,14 +2,14 @@
 
 namespace Glasno.Case.Aggregator.Application.Contracts;
 
-public record CaseInternal
-(
-    Guid CaseId,
-    string CaseNumber,
-    CaseTypeInternal CaseTypeInternal,
-    string CourtName,
-    string JudgeName,
-    DateTime? Date,
-    PlaintiffInternal[] Plaintiffs,
-    RespondentInternal[] Respondents
-);
+public class CaseInternal
+{
+    public Guid CaseId { get; init; }
+    public string CaseNumber { get; init; }
+    public CaseTypeInternal CaseTypeInternal { get; init; }
+    public string CourtName { get; init; }
+    public string JudgeName { get; init; }
+    public DateTime? Date { get; init; }
+    public PlaintiffInternal[] Plaintiffs { get; init; }
+    public RespondentInternal[] Respondents { get; init; }
+}
