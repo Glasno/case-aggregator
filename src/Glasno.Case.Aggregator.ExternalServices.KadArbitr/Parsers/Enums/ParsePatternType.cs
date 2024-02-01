@@ -1,6 +1,6 @@
 ﻿namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.Parsers.Enums;
 
-public enum ParsePatternType
+internal enum ParsePatternType
 {
     CaseHref,
     Date,

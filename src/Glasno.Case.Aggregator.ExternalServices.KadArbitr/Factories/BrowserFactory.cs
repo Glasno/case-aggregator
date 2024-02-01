@@ -3,12 +3,12 @@ using CefSharp.OffScreen;
 
 namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.Factories;
 
-public static class KadArbitrBrowserFactory
+internal static class BrowserFactory
 {
     private const string KadArbitrUrl = "https://kad.arbitr.ru";
     private const string ClickOnSearchButtonScript = "document.getElementsByClassName('b-button-container')[0].click()";
 
-    public static ChromiumWebBrowser Create()
+    internal static ChromiumWebBrowser Create()
     {
        var browser = new ChromiumWebBrowser(KadArbitrUrl);
        browser.Load().GetAwaiter().GetResult();
@@ -29,14 +29,15 @@ public static class KadArbitrBrowserFactory
         
 
     public static async Task<string> CreateCookies(this ChromiumWebBrowser browser)
+    internal static async Task<string> CreateCookies(this ChromiumWebBrowser browser)
     {
         browser.ExecuteScriptAsync(ClickOnSearchButtonScript);
 
-        await Task.Delay(10000);
+        await Task.Delay(5000);
 
         var cookiesList = await browser.GetCookieManager().VisitAllCookiesAsync();
         var cookies = cookiesList.FindAll(cookie => cookie.Name is "pr_fp" or "wasm");
-        
+
         return FormattingCookies(cookies);
     }
 

@@ -2,12 +2,12 @@
 
 namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.Factories;
 
-public static class KadArbitrRestClientFactory
+internal static class RestClientFactory
 {
     private const string KadArbitrUrl = "https://kad.arbitr.ru";
     private static readonly RestClientOptions Options = new RestClientOptions(KadArbitrUrl);
     
-    public static RestClient Create()
+    internal static RestClient Create()
     {
         return new RestClient(Options);
     }

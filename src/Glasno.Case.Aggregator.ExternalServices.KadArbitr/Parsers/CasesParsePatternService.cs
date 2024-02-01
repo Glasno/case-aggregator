@@ -2,7 +2,7 @@
 
 namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.Parsers;
 
-public static class CasesParsePatternService
+internal static class CasesParsePatternService
 {
     private const string CaseNumberPattern = @"class=""num_case"">\s+([^""]+)</a>";
     private const string CaseTypePattern = @"class=""([^""]+)""\s";

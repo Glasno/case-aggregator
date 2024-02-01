@@ -14,8 +14,8 @@ public class KadArbitrCaseProvider: IKadArbitrCaseProvider
 
     public KadArbitrCaseProvider()
     {
-        _client = KadArbitrRestClientFactory.Create();
-        _browser = KadArbitrBrowserFactory.Create();
+        _client = RestClientFactory.Create();
+        _browser = BrowserFactory.Create();
     }
     
     public async Task<CaseExternal[]> SearchCases(SearchQuery query)

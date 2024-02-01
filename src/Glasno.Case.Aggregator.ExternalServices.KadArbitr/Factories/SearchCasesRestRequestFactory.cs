@@ -4,7 +4,7 @@ using RestSharp;
 
 namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.Factories;
 
-public static class SearchCasesRestRequestFactory
+internal static class SearchCasesRestRequestFactory
 {
     private static readonly Dictionary<string, string> Headers = new()
     {
@@ -16,7 +16,7 @@ public static class SearchCasesRestRequestFactory
         {"X-Requested-With", "XMLHttpRequest"}
     };
 
-    public static RestRequest CreatePost(SearchQuery query, string cookie)
+    internal static RestRequest CreatePost(SearchQuery query, string cookie)
     {
         var request = new RestRequest("Kad/SearchInstances", Method.Post);
         
