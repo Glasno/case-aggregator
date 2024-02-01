@@ -1,4 +1,5 @@
-﻿using CefSharp;
+﻿using System.Reflection;
+using CefSharp;
 using CefSharp.OffScreen;
 
 namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.Factories;
@@ -10,10 +11,12 @@ internal static class BrowserFactory
 
     internal static ChromiumWebBrowser Create()
     {
-       var browser = new ChromiumWebBrowser(KadArbitrUrl);
-       browser.Load().GetAwaiter().GetResult();
-       
-       return browser;
+        CefFactory.Initialize();
+
+        var browser = new ChromiumWebBrowser(KadArbitrUrl);
+        browser.Load().GetAwaiter().GetResult();
+
+        return browser;
     }
 
     private static async Task Load(this ChromiumWebBrowser browser)
@@ -26,9 +29,7 @@ internal static class BrowserFactory
                 $"Page load failed with ErrorCode:{loadUrl.ErrorCode}, HttpStatusCode:{loadUrl.HttpStatusCode}");
         }
     }
-        
 
-    public static async Task<string> CreateCookies(this ChromiumWebBrowser browser)
     internal static async Task<string> CreateCookies(this ChromiumWebBrowser browser)
     {
         browser.ExecuteScriptAsync(ClickOnSearchButtonScript);
