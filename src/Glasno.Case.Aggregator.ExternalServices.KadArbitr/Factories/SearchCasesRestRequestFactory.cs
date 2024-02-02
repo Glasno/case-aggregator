@@ -16,7 +16,7 @@ internal static class SearchCasesRestRequestFactory
         {"X-Requested-With", "XMLHttpRequest"}
     };
 
-    internal static RestRequest CreatePost(SearchQuery query, string cookie)
+    internal static RestRequest CreatePost(SearchQueryExternal query, string cookie)
     {
         var request = new RestRequest("Kad/SearchInstances", Method.Post);
         

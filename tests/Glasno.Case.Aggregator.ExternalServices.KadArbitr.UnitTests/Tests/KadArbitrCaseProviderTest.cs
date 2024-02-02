@@ -20,7 +20,7 @@ public class KadArbitrCaseProviderTest
         // Arrange
         var kadArbitrCaseProvider = new KadArbitrCaseProvider();
         
-        var searchQuery = new SearchQuery(
+        var searchQuery = new SearchQueryExternal(
             Page: 1, 
             Count: 25, 
             DateFrom: null, 

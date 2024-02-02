@@ -2,7 +2,7 @@
 
 namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.Contracts;
 
-public record SearchQuery
+public record SearchQueryExternal
 (
     int Page,
     int Count,

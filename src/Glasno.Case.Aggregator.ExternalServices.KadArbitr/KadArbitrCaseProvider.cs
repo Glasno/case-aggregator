@@ -12,7 +12,7 @@ public class KadArbitrCaseProvider : IKadArbitrCaseProvider
     private readonly RestClient _client = RestClientFactory.Create();
     private readonly ChromiumWebBrowser _browser = BrowserFactory.Create();
 
-    public async Task<CaseExternal[]> SearchCases(SearchQuery query)
+    public async Task<CaseExternal[]> SearchCases(SearchQueryExternal query)
     {
         var cookie = await _browser.CreateCookies();
         

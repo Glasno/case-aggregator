@@ -10,12 +10,14 @@
     <PackageVersion Include="CefSharp.Common.NETCore" Version="120.2.70" />
     <PackageVersion Include="CefSharp.OffScreen.NETCore" Version="120.2.70" />
     <PackageVersion Include="coverlet.collector" Version="3.2.0" />
+    <PackageVersion Include="Dapper" Version="2.1.28" />
     <PackageVersion Include="HtmlAgilityPack" Version="1.11.57" />
     <PackageVersion Include="MediatR" Version="12.2.0" />
     <PackageVersion Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="7.0.15" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+    <PackageVersion Include="Npgsql" Version="8.0.1" />
     <PackageVersion Include="RestSharp" Version="110.2.1-alpha.0.16" />
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageVersion Include="xunit" Version="2.4.2" />

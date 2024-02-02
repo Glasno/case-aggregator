@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{81DAEA
 		.gitignore = .gitignore
 		Directory.Packages.props = Directory.Packages.props
 		Directory.Build.props = Directory.Build.props
+		docker-compose.yaml = docker-compose.yaml
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glasno.Case.Aggregator.Presentation", "src\Glasno.Case.Aggregator.Presentation\Glasno.Case.Aggregator.Presentation.csproj", "{374FEFF3-572C-44BB-999C-111BA3406E92}"

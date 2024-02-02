@@ -3,4 +3,7 @@
     <PackageReference Include="AutoMapper" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Glasno.Case.Aggregator.Domain\Glasno.Case.Aggregator.Domain.csproj" />
+  </ItemGroup>
 </Project>

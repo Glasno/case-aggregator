@@ -19,11 +19,21 @@
       <Content Include="..\..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
+      <Content Update="appsettings.Development.json">
+        <DependentUpon>appsettings.json</DependentUpon>
+      </Content>
+      <Content Update="appsettings.Local.json">
+        <DependentUpon>appsettings.json</DependentUpon>
+      </Content>
+      <Content Update="appsettings.Production.json">
+        <DependentUpon>appsettings.json</DependentUpon>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Glasno.Case.Aggregator.Application\Glasno.Case.Aggregator.Application.csproj" />
       <ProjectReference Include="..\Glasno.Case.Aggregator.ExternalServices.KadArbitr\Glasno.Case.Aggregator.ExternalServices.KadArbitr.csproj" />
+      <ProjectReference Include="..\Glasno.Case.Aggregator.Infrastructure\Glasno.Case.Aggregator.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

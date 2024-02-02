@@ -1,6 +1,7 @@
 using System.Reflection;
 using Glasno.Case.Aggregator.Application;
 using Glasno.Case.Aggregator.ExternalServices.KadArbitr;
+using Glasno.Case.Aggregator.Infrastructure;
 using Glasno.Case.Aggregator.Presentation.Controllers;
 using MediatR;
 
@@ -15,6 +16,7 @@ public class Program
         // Add services to the container.
         builder.Services.AddApplication();
         builder.Services.AddKadArbitrProvider();
+        builder.Services.AddInfrastructure();
         builder.Services.AddControllers();
         
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

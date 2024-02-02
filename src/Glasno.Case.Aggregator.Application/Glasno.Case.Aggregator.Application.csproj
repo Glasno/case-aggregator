@@ -13,6 +13,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Glasno.Case.Aggregator.Domain\Glasno.Case.Aggregator.Domain.csproj" />
       <ProjectReference Include="..\Glasno.Case.Aggregator.ExternalServices\Glasno.Case.Aggregator.ExternalServices.csproj" />
+      <ProjectReference Include="..\Glasno.Case.Aggregator.Infrastructure.Abstractions\Glasno.Case.Aggregator.Infrastructure.Abstractions.csproj" />
     </ItemGroup>
 
 </Project>

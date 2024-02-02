@@ -1,4 +1,4 @@
-﻿namespace Glasno.Case.Aggregator.Domain.Contracts.ValueObjects;
+﻿namespace Glasno.Case.Aggregator.Domain.Cases.ValueObjects;
 
 public enum CaseType
 {

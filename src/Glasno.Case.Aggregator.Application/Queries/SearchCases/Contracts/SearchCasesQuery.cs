@@ -5,5 +5,5 @@ namespace Glasno.Case.Aggregator.Application.Queries.SearchCases.Contracts;
 
 public class SearchCasesQuery: IRequest<SearchCasesResponse>
 {
-    public SearchQuery SearchQuery { get; set; }
+    public SearchQueryExternal SearchQuery { get; set; }
 }
