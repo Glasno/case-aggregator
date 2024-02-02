@@ -1,14 +1,13 @@
-﻿namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.Contracts;
+﻿namespace Glasno.Case.Aggregator.ExternalServices.KadArbitr.Contracts.ValueObjects;
 
-public record CaseExternal
-(
-    Guid CaseId,
-    string CaseNumber,
-    CaseTypeExternal CaseType,
-    string CourtName,
-    string Judge,
-    DateTime Date,
-    PlaintiffExternal[] Plaintiffs,
-    RespondentExternal[] Respondents,
-    bool IsSimpleJustice
-);
+public class CaseExternal
+{
+    public Guid CaseId { get; init; }
+    public string CaseNumber { get; init; }
+    public CaseTypeExternal CaseType { get; init; }
+    public string CourtName { get; init; }
+    public string JudgeName { get; init; }
+    public DateTime? Date { get; init; }
+    public PlaintiffExternal[] Plaintiffs { get; init; }
+    public RespondentExternal[] Respondents { get; init; }
+}

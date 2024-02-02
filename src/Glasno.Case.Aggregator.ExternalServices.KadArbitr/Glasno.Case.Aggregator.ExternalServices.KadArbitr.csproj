@@ -1,9 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
+    
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+      <PackageReference Include="CefSharp.Common.NETCore" />
+      <PackageReference Include="CefSharp.OffScreen.NETCore" />
+      <PackageReference Include="HtmlAgilityPack" />
+      <PackageReference Include="RestSharp" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Glasno.Case.Aggregator.ExternalServices\Glasno.Case.Aggregator.ExternalServices.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Parsers\CasesParser.Helpers.cs">
+        <DependentUpon>CasesParser.cs</DependentUpon>
+      </Compile>
+    </ItemGroup>
 
 </Project>

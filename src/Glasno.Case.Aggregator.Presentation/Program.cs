@@ -1,3 +1,10 @@
+using System.Reflection;
+using Glasno.Case.Aggregator.Application;
+using Glasno.Case.Aggregator.ExternalServices.KadArbitr;
+using Glasno.Case.Aggregator.Infrastructure;
+using Glasno.Case.Aggregator.Presentation.Controllers;
+using MediatR;
+
 namespace Glasno.Case.Aggregator.Presentation;
 
 public class Program
@@ -7,8 +14,11 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
-
+        builder.Services.AddApplication();
+        builder.Services.AddKadArbitrProvider();
+        builder.Services.AddInfrastructure();
         builder.Services.AddControllers();
+        
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
@@ -16,16 +26,12 @@ public class Program
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        }
+        app.UseSwagger();
+        app.UseSwaggerUI();
 
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
-
 
         app.MapControllers();
 

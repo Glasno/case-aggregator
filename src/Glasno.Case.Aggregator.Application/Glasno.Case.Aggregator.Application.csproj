@@ -1,9 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
+    
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" />
+      <PackageReference Include="AutoMapper.Extensions.EnumMapping" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+      <PackageReference Include="MediatR" />
+      <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Glasno.Case.Aggregator.Domain\Glasno.Case.Aggregator.Domain.csproj" />
+      <ProjectReference Include="..\Glasno.Case.Aggregator.ExternalServices\Glasno.Case.Aggregator.ExternalServices.csproj" />
+      <ProjectReference Include="..\Glasno.Case.Aggregator.Infrastructure.Abstractions\Glasno.Case.Aggregator.Infrastructure.Abstractions.csproj" />
+    </ItemGroup>
 
 </Project>

@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{81DAEA
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
+		Directory.Packages.props = Directory.Packages.props
+		Directory.Build.props = Directory.Build.props
+		docker-compose.yaml = docker-compose.yaml
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glasno.Case.Aggregator.Presentation", "src\Glasno.Case.Aggregator.Presentation\Glasno.Case.Aggregator.Presentation.csproj", "{374FEFF3-572C-44BB-999C-111BA3406E92}"
@@ -31,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glasno.Case.Aggregator.Pres
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glasno.Case.Aggregator.Application", "src\Glasno.Case.Aggregator.Application\Glasno.Case.Aggregator.Application.csproj", "{4A862BF6-94E3-4229-A5B6-1BBC2DCC9E0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glasno.Case.Aggregator.ExternalServices.KadArbitr.UnitTests", "tests\Glasno.Case.Aggregator.ExternalServices.KadArbitr.UnitTests\Glasno.Case.Aggregator.ExternalServices.KadArbitr.UnitTests.csproj", "{7D0C2425-D366-4BBC-AD26-9824FF08385F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +55,7 @@ Global
 		{5381FF31-3E20-4DA4-9DEB-3EA3EB0311E8} = {9265F3DD-11A0-442A-81E6-8E0B941A9839}
 		{A7C471F1-9059-4AA7-9227-C435D3394414} = {9265F3DD-11A0-442A-81E6-8E0B941A9839}
 		{4A862BF6-94E3-4229-A5B6-1BBC2DCC9E0B} = {9265F3DD-11A0-442A-81E6-8E0B941A9839}
+		{7D0C2425-D366-4BBC-AD26-9824FF08385F} = {F56107E5-DA4F-4DD6-99C5-726D05EAB4DD}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{374FEFF3-572C-44BB-999C-111BA3406E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -83,5 +90,9 @@ Global
 		{4A862BF6-94E3-4229-A5B6-1BBC2DCC9E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A862BF6-94E3-4229-A5B6-1BBC2DCC9E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A862BF6-94E3-4229-A5B6-1BBC2DCC9E0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D0C2425-D366-4BBC-AD26-9824FF08385F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D0C2425-D366-4BBC-AD26-9824FF08385F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D0C2425-D366-4BBC-AD26-9824FF08385F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D0C2425-D366-4BBC-AD26-9824FF08385F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
